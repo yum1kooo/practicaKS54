@@ -10,7 +10,7 @@ public class Person {
     public Person(String name) {
         this.name = name;
     }
-
+    // test git
     public void removeTask(){ //удаляет задачу по id
         while (true) {
             try {
