@@ -2,19 +2,19 @@ import java.util.LinkedHashMap;
 
 public class Main {
     public static void main(String[] args) {
-        Person person = new Person("123");
+        Person person = new Person("Кирилл");
         DataBase db = new DataBase();
+        Task taskTest = new Task("asd", "asd", "asd");
+        Task taskTest2 = new Task("2", "asd", "asd");
 
-        //System.out.println(db.searchTaskById(1));
 
-       person.createNewTask();
+        db.addTask(1, taskTest);
+        db.addTask(2, taskTest);
 
-        //Task test = new Task("ads", "asd", "asd");
-        //db.addTask(3, test);
-
-        //person.changeTaskName();
         db.getAllTask();
 
-        //System.out.println(db.searchTaskById(1));
+        person.removeTask();
+
+        db.getAllTask();
     }
 }

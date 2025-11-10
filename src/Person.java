@@ -11,7 +11,48 @@ public class Person {
         this.name = name;
     }
 
-    public void changeTaskName() {  // Меняет название таски
+    public void removeTask(){ //удаляет задачу по id
+        while (true) {
+            try {
+                System.out.println("Введите id задачи которую вы хотите удалить");
+                System.out.println("0 - для выхода");
+                int id = scanner.nextInt();
+                scanner.nextLine();
+
+                if(id == 0){
+                    break;
+                }
+
+                Task removeTask = db.searchTaskById(id);
+
+                if (removeTask == null) {
+                    System.out.println("По такому id задачи не найдено!");
+                } else {
+                    System.out.println("Вы точно хотите удалить?");
+                    String choice = scanner.nextLine().trim().toLowerCase();
+                    switch (choice) {
+                        case "да": {
+                            db.removeTaskById(id);
+                            return;
+                        }
+                        case "нет": {
+                            return;
+                        }
+                        default: {
+                            System.out.println("Некоректный ввод");
+                            scanner.nextLine();
+                            break;
+                        }
+                    }
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Неверный ввод");
+                scanner.nextLine();
+            }
+        }
+    }
+
+    public void changeTaskName() {  // Меняет название задачи
         while (true) {
             try {
                 System.out.println("Введите id задачи который вы хотите поменять!");
@@ -35,12 +76,11 @@ public class Person {
             } catch (InputMismatchException e) {
                 System.out.println("Неверный ввод");
                 scanner.nextLine();
-                continue;
             }
         }
 
     }
-        public void changeTaskDescription() { // меняем описание  таски
+        public void changeTaskDescription() { // меняем описание задачи
             while (true) {
                 try {
                     System.out.println("Введите id задачи который вы хотите поменять!");
@@ -64,12 +104,11 @@ public class Person {
                 } catch (InputMismatchException e) {
                     System.out.println("Неверный ввод");
                     scanner.nextLine();
-                    continue;
                 }
             }
         }
 
-        public void changeTaskStatus(){ // меняем статус таски
+        public void changeTaskStatus(){ // меняем статус задачи
             while (true) {
                 try {
                     System.out.println("Введите id задачи который вы хотите поменять!");
@@ -93,12 +132,11 @@ public class Person {
                 } catch (InputMismatchException e) {
                     System.out.println("Неверный ввод");
                     scanner.nextLine();
-                    continue;
                 }
             }
         }
 
-    public void createNewTask() { // создаем таску
+    public void createNewTask() { // создаем задачи
         int id;
         while (true) {
             try {
