@@ -5,6 +5,7 @@ import Service.Task;
 
 import java.io.Serializable;
 import java.util.InputMismatchException;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class Person implements Serializable {
@@ -12,10 +13,13 @@ public class Person implements Serializable {
 
     transient Scanner scanner = new Scanner(System.in);
     DataBase db = new DataBase();
+    Task task = new Task("0", "0", "0");
+    LinkedHashMap<Integer, Task> dbMap = new LinkedHashMap<>();
 
     public Person(String name) {
         this.name = name;
     }
+
 
     public void removeTask(){ //удаляет задачу по id
         while (true) {
@@ -57,6 +61,7 @@ public class Person implements Serializable {
             }
         }
     }
+
 
     public void changeTaskName() {  // Меняет название задачи
         while (true) {

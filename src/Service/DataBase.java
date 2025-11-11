@@ -16,6 +16,9 @@ public class DataBase implements Serializable {
         }
     }
 
+    public LinkedHashMap<Integer, Task> setDB(LinkedHashMap<Integer, Task> db){
+        return db;
+    }
 
     public void addTask(int id, Task task){ //добавляем задачу
         taskDB.putIfAbsent(id, task);
