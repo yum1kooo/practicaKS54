@@ -11,6 +11,7 @@ public class Main implements Serializable {
         Person person = new Person("Кирилл");
         DataBase db = new DataBase();
 
+
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("database.dat"))) {
             DataBase loaded = (DataBase) ois.readObject();
             person.db = loaded;

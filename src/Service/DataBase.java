@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DataBase implements Serializable {
-    transient private LinkedHashMap<Integer, Task> taskDB = new LinkedHashMap<>();
+     private static LinkedHashMap<Integer, Task> taskDB = new LinkedHashMap<>();
 
     public void getAllTask(){ // краткое описание задачи с ее номером
         for(Map.Entry<Integer, Task> allTask : taskDB.entrySet()){
@@ -16,9 +16,8 @@ public class DataBase implements Serializable {
         }
     }
 
-    public LinkedHashMap<Integer, Task> setDB(LinkedHashMap<Integer, Task> db){
-        return db;
-    }
+
+
 
     public void addTask(int id, Task task){ //добавляем задачу
         taskDB.putIfAbsent(id, task);
