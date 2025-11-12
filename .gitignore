@@ -1,27 +1,24 @@
-<<<<<<< HEAD
 ### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws
+*.ipr
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.kotlin
 
-=======
+### Maven ###
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.kotlin
 
-### IntelliJ IDEA ###
+### IntelliJ IDEA дополнительные файлы ###
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-*.iws
-*.iml
-*.ipr
 
->>>>>>> 8c153f8 (перенос на новую архитектуру для дальнейшего подключения фреймворков)
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -30,12 +27,14 @@ target/
 .settings
 .springBeans
 .sts4-cache
-<<<<<<< HEAD
+
+### Build ###
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-=======
->>>>>>> 8c153f8 (перенос на новую архитектуру для дальнейшего подключения фреймворков)
 
 ### NetBeans ###
 /nbproject/private/
@@ -43,15 +42,21 @@ bin/
 /dist/
 /nbdist/
 /.nb-gradle/
-<<<<<<< HEAD
-=======
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
->>>>>>> 8c153f8 (перенос на новую архитектуру для дальнейшего подключения фреймворков)
 
 ### VS Code ###
 .vscode/
 
 ### Mac OS ###
 .DS_Store
+
+### Kotlin ###
+.kotlin/
+*.kotlin_module
+
+### Logs ###
+*.log
+logs/
+
+### Temporary files ###
+tmp/
+temp/
